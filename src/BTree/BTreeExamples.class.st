@@ -11,6 +11,6 @@ Class {
 BTreeExamples >> smallest [
 	<gtExample>
 	t:=BTree order:1.
-	self assert: t size equals: 1; assert: t isEmpty.
+	self assert: t size equals: 1; assert: t isEmpty; assert: t order equals: 1.
 	^t
 ]

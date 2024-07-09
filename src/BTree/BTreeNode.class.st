@@ -10,7 +10,7 @@ Class {
 
 { #category : #create }
 BTreeNode class >> order: m [ 
-	^ (self basicNew: m) order: m; yourself
+	^ self subclassResponsibility
 ]
 
 { #category : #accessing }
@@ -23,12 +23,17 @@ BTreeNode >> isEmpty [
 	^ (self children contains: [:x | x notNil]) not
 ]
 
+{ #category : #accessing }
+BTreeNode >> order [
+	^ self subclassResponsibility
+]
+
 { #category : #initialize }
 BTreeNode >> order: m [
 	keys:= BTreeKeys order: m
 ]
 
 { #category : #accessing }
-BTreeNode >> size [
-	^ 1 + (self children collect: [:x|x size]) sumNumbers
+BTreeNode >> subtreeSize [
+	^ self subclassResponsibility
 ]

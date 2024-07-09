@@ -17,6 +17,11 @@ BTree >> isEmpty [
 	^ self root isEmpty
 ]
 
+{ #category : #accessing }
+BTree >> order [
+	^self root order
+]
+
 { #category : #init }
 BTree >> order: m [
 	root:= BTreeLeaf order: m
@@ -29,5 +34,5 @@ BTree >> root [
 
 { #category : #accessing }
 BTree >> size [
-	^ self root size
+	^ self root subtreeSize
 ]
