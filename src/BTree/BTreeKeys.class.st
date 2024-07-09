@@ -7,5 +7,5 @@ Class {
 
 { #category : #initialize }
 BTreeKeys class >> order: m [ 
-	^ self basicNew: m; yourself
+	^ self basicNew: m
 ]

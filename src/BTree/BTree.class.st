@@ -9,12 +9,23 @@ Class {
 
 { #category : #create }
 BTree class >> order: m [
+	self assert: m > 1.
 	^ self basicNew order: m; yourself
+]
+
+{ #category : #accessing }
+BTree >> at: i put: o [
+	^ root treeAt: i put: o.
 ]
 
 { #category : #accessing }
 BTree >> isEmpty [
 	^ self root isEmpty
+]
+
+{ #category : #accessing }
+BTree >> isNotEmpty [
+	^ self isEmpty not
 ]
 
 { #category : #accessing }

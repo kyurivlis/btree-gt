@@ -10,7 +10,7 @@ Class {
 
 { #category : #create }
 BTreeNode class >> order: m [ 
-	^ self subclassResponsibility
+	^(self basicNew: m) order: m; yourself
 ]
 
 { #category : #accessing }
@@ -21,6 +21,11 @@ BTreeNode >> children [
 { #category : #accessing }
 BTreeNode >> isEmpty [ 
 	^ (self children contains: [:x | x notNil]) not
+]
+
+{ #category : #accessing }
+BTreeNode >> keys [
+	^keys
 ]
 
 { #category : #accessing }
@@ -35,5 +40,10 @@ BTreeNode >> order: m [
 
 { #category : #accessing }
 BTreeNode >> subtreeSize [
+	^ self subclassResponsibility
+]
+
+{ #category : #accessing }
+BTreeNode >> treeAt: i put: o [
 	^ self subclassResponsibility
 ]

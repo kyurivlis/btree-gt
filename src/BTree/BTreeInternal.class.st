@@ -5,9 +5,10 @@ Class {
 	#category : #BTree
 }
 
-{ #category : #create }
-BTreeInternal class >> order: m [
-	^(self basicNew: m) order: m; yourself
+{ #category : #accessing }
+BTreeInternal >> at: i put: o [
+"todo"
+	keys withIndexDo: [:gi :li | gi isNil]
 ]
 
 { #category : #accessing }

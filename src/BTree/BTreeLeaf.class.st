@@ -7,7 +7,7 @@ Class {
 
 { #category : #create }
 BTreeLeaf class >> order: m [
-	^(self basicNew: m-1) order: m; yourself
+	^super order: m -1
 ]
 
 { #category : #accessing }
@@ -19,4 +19,9 @@ BTreeLeaf >> order [
 { #category : #accessing }
 BTreeLeaf >> subtreeSize [
 	^1
+]
+
+{ #category : #accessing }
+BTreeLeaf >> treeAt: i put: o [
+	keys withIndexDo: [:ti :k|((ti isNil) | (ti = i)) ifTrue: [keys at: k put: i. self at: i put: o. ^o]] 
 ]
